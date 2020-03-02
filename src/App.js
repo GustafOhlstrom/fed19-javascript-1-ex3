@@ -29,7 +29,11 @@ class App extends React.Component {
 					weatherSearch: "",
 				})
 			})
-			.catch(err => this.setState({errorMessage: "Could not get weather for city: " + err}))
+			.catch(err => this.setState({
+				errorMessage: "Could not get weather for \"" + this.state.weatherSearch + "\" : " + err,
+				report: null,
+				weatherSearch: "",
+			}))
 	}
 
 	render() {
